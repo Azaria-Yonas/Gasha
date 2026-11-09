@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gasha settings</title>
+    <link rel="icon" href="icons/icon32.png">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/options.css">
+    <script type="module" src="options.js"></script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="rail on-velvet" aria-label="Gasha status">
+        <div class="rail-inner">
+          <a class="wordmark rail-mark" href="options.html"><span>Gasha</span><span class="geez" lang="am">ጋሻ</span></a>
+          <p class="tagline">Your shield against the sites you open on autopilot.</p>
+          <div class="rail-shield">
+            <div id="rail-shield"></div>
+            <div class="rail-clock" id="rail-clock"></div>
+          </div>
+          <p class="rail-status" id="rail-status"></p>
+          <div class="rail-lock" id="rail-lock"></div>
+          <dl class="stats" id="stats"></dl>
+          <button type="button" class="btn btn-gilt" id="rail-notebook">Open your notebook</button>
+        </div>
+      </aside>
+
+      <main class="main on-paper" id="main">
+        <section class="welcome" id="welcome" hidden>
+          <h1>Welcome to Gasha</h1>
+          <p>Gasha means shield in Amharic. It protects you from the sites you open out of muscle memory, like reaching for your phone in the middle of work. Three steps to set it up:</p>
+          <ol>
+            <li>Add the sites you open without thinking.</li>
+            <li>Write your notebook. It is what you will see instead of those sites.</li>
+            <li>Pin Gasha from the puzzle piece icon in your toolbar, then start a focus session.</li>
+          </ol>
+        </section>
+
+        <p class="lock-banner" id="lock-banner" role="status" hidden></p>
+
+        <section class="section" id="sites" aria-labelledby="sites-title">
+          <div class="section-head">
+            <h2 id="sites-title">Blocked sites</h2>
+            <span class="count" id="site-count"></span>
+          </div>
+          <p class="lede">Add a domain like youtube.com to block the whole site, or a path like reddit.com/r/all to block only that part. Separate several with commas.</p>
+          <form class="inline-form" id="add-form">
+            <input class="input" id="add-input" placeholder="youtube.com, instagram.com" autocomplete="off" spellcheck="false" aria-label="Sites to block">
+            <button class="btn btn-velvet" type="submit">Add</button>
+          </form>
+          <p class="msg" id="add-msg" role="status"></p>
+          <div class="suggestions" id="suggestions"></div>
+          <ul class="site-list" id="site-list"></ul>
+        </section>
+
+        <section class="section" id="notebook" aria-labelledby="notebook-title">
+          <h2 id="notebook-title">Your notebook</h2>
+          <p class="lede">Blocked sites open your notebook instead. Fill it with notes to yourself, videos, photos, and links that pull you back to work. It saves on this computer and is there every time Chrome starts.</p>
+          <div class="actions">
+            <button type="button" class="btn btn-velvet" id="edit-notebook">Edit notebook</button>
+            <button type="button" class="btn btn-outline" id="view-notebook">Open notebook</button>
+          </div>
+        </section>
+
+        <section class="section" id="schedule" aria-labelledby="schedule-title">
+          <h2 id="schedule-title">When to block</h2>
+          <div class="choices" role="radiogroup" aria-labelledby="schedule-title">
+            <label class="choice">
+              <input type="radio" name="blockMode" value="always">
+              <span><strong>All the time</strong><span>Blocked sites never load, session or not.</span></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="blockMode" value="session">
+              <span><strong>Only during focus sessions</strong><span>Sites work normally until you start a session.</span></span>
+            </label>
+          </div>
+          <p class="msg" id="schedule-msg" role="status"></p>
+        </section>
+
+        <section class="section" id="password" aria-labelledby="password-title">
+          <h2 id="password-title">Password</h2>
+          <p class="lede">With a password, a focus session only ends early if someone types it. If you want to be extra strict, ask a friend or parent to set it for you.</p>
+          <div id="password-body"></div>
+          <label class="check">
+            <input type="checkbox" id="protect-always">
+            <span><strong>Also lock settings outside of sessions</strong><span>Removing sites, editing the notebook, and changing settings will need the password.</span></span>
+          </label>
+          <p class="msg" id="password-msg" role="status"></p>
+        </section>
+
+        <section class="section" id="protection" aria-labelledby="protection-title">
+          <h2 id="protection-title">Protection</h2>
+          <label class="check">
+            <input type="checkbox" id="lock-extensions">
+            <span><strong>Lock Chrome's extensions page while Gasha is locked</strong><span>So Gasha cannot be switched off in the middle of a session.</span></span>
+          </label>
+          <div class="incognito-row" id="incognito-row"></div>
+          <p class="msg" id="protection-msg" role="status"></p>
+        </section>
+
+        <section class="section" id="backup" aria-labelledby="backup-title">
+          <h2 id="backup-title">Backup</h2>
+          <p class="lede">Your notebook, photos, and blocked sites are saved on this computer. Download a backup to keep a copy or move everything to another computer. Your password is not included.</p>
+          <div class="actions">
+            <button type="button" class="btn btn-outline" id="download-backup">Download backup</button>
+            <button type="button" class="btn btn-outline" id="restore-backup">Restore from backup</button>
+            <input type="file" id="restore-input" accept="application/json,.json" hidden>
+          </div>
+          <div class="confirm" id="restore-confirm" hidden></div>
+          <p class="msg" id="backup-msg" role="status"></p>
+        </section>
+
+        <footer class="foot">Gasha keeps everything on this computer. There is no account, and nothing is sent anywhere.</footer>
+      </main>
+    </div>
+  </body>
+</html>

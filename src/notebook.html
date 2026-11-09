@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your notebook</title>
+    <link rel="icon" href="icons/icon32.png">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/notebook.css">
+    <script type="module" src="notebook.js"></script>
+  </head>
+  <body class="nb">
+    <header class="topbar on-velvet" id="topbar"></header>
+    <div class="workspace">
+      <main class="desk" id="desk">
+        <article class="paper" id="paper" aria-label="Your notebook">
+          <div class="blocks" id="blocks"></div>
+        </article>
+      </main>
+      <aside class="inspector on-paper" id="inspector" aria-label="Notebook tools" hidden></aside>
+    </div>
+    <input type="file" id="photo-input" accept="image/*" hidden>
+  </body>
+</html>

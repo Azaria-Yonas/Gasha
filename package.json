@@ -1,0 +1,22 @@
+{
+  "name": "gasha",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gasha, which means shield in Amharic, is a Chrome extension that blocks the sites you open out of habit and sends you to a notebook you design for yourself.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "build": "node scripts/build.ts",
+    "watch": "node scripts/build.ts --watch",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc -p tsconfig.node.json",
+    "package": "node scripts/build.ts --zip"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.7",
+    "@types/node": "^22.20.5",
+    "typescript": "^7.0.2"
+  }
+}

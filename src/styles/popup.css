@@ -1,0 +1,239 @@
+body.popup {
+  width: 360px;
+  min-height: 220px;
+  background: var(--velvet);
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px 4px 20px;
+}
+
+.masthead .wordmark {
+  font-size: 21px;
+}
+
+.masthead-nav {
+  display: flex;
+  gap: 2px;
+}
+
+#root {
+  display: grid;
+  gap: 18px;
+  padding: 10px 20px 22px;
+}
+
+.idle {
+  display: grid;
+  gap: 20px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(20, 2, 8, 0.24);
+}
+
+.status-shield {
+  flex: none;
+  width: 52px;
+  height: 52px;
+}
+
+.status-title {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.status-detail {
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.status .btn {
+  margin-top: 8px;
+}
+
+.quick {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.quick p {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quick strong {
+  color: var(--text);
+}
+
+.section-title {
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.chips {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.chips .chip {
+  padding: 0 6px;
+}
+
+.custom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  color: var(--text-soft);
+}
+
+.custom .input {
+  width: 96px;
+}
+
+.start .btn-block {
+  min-height: 46px;
+  margin-top: 14px;
+  font-size: 16px;
+}
+
+.hint {
+  margin-top: 8px;
+  font-size: 13px;
+  text-align: center;
+  color: var(--text-soft);
+}
+
+.warn {
+  margin-top: 12px;
+  padding-left: 10px;
+  border-left: 2px solid var(--gilt);
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.warn a {
+  color: var(--gilt);
+  font-weight: 700;
+}
+
+.session {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.dial {
+  position: relative;
+  width: 232px;
+  height: 232px;
+}
+
+.dial-center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+}
+
+.clock-time {
+  font-size: 44px;
+  line-height: 1;
+}
+
+.clock-label {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.session-title {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.session-detail {
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.row .btn {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.end-early {
+  width: 100%;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.end-early summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-soft);
+}
+
+.end-early summary::-webkit-details-marker {
+  display: none;
+}
+
+.end-early summary:hover {
+  color: var(--text);
+}
+
+.end-early[open] summary {
+  margin-bottom: 10px;
+}
+
+.note {
+  max-width: 290px;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.incognito {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(251, 243, 230, 0.14);
+  font-size: 13px;
+  color: var(--text-soft);
+}

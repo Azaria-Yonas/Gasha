@@ -1,0 +1,375 @@
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  src: url('../fonts/atkinson-hyperlegible-next-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  src: url('../fonts/atkinson-hyperlegible-next-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  src: url('../fonts/atkinson-hyperlegible-next-latin-800-normal.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gasha Geez';
+  src: url('../fonts/noto-serif-ethiopic-gasha-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: block;
+  unicode-range: U+1200-137F;
+}
+
+:root {
+  --velvet: #4e1023;
+  --velvet-deep: #380a19;
+  --velvet-raised: #5f1a31;
+  --velvet-line: #7c2f48;
+  --gilt: #f0c35a;
+  --gilt-strong: #e0ab38;
+  --gilt-dim: rgba(240, 195, 90, 0.2);
+  --ivory: #fbf3e6;
+  --ivory-dim: rgba(251, 243, 230, 0.76);
+  --ivory-faint: rgba(251, 243, 230, 0.52);
+  --paper: #f6f3ef;
+  --panel: #ffffff;
+  --ink: #2b0e18;
+  --ink-soft: #6c5a61;
+  --rule: #e6ddd7;
+  --font-ui: 'Atkinson Hyperlegible Next', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-geez: 'Gasha Geez', 'Kefa', 'Nyala', 'Ebrima', 'Noto Serif Ethiopic', serif;
+  --radius-control: 10px;
+  --radius-panel: 18px;
+}
+
+.on-velvet {
+  --text: var(--ivory);
+  --text-soft: var(--ivory-dim);
+  --outline: rgba(251, 243, 230, 0.32);
+  --input-bg: rgba(20, 2, 8, 0.28);
+  --input-border: rgba(251, 243, 230, 0.26);
+  --focus: var(--gilt);
+  --danger: #ffa596;
+  --ok: #b6e3a8;
+  color: var(--text);
+}
+
+.on-paper {
+  --text: var(--ink);
+  --text-soft: var(--ink-soft);
+  --outline: #d8ccc5;
+  --input-bg: #ffffff;
+  --input-border: #d8ccc5;
+  --focus: var(--velvet);
+  --danger: #b3261e;
+  --ok: #2e7d4f;
+  color: var(--text);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+dl,
+dd,
+ol,
+ul {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus, var(--gilt));
+  outline-offset: 2px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.wordmark .geez {
+  font-family: var(--font-geez);
+  font-weight: 700;
+  color: var(--gilt);
+  letter-spacing: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-control);
+  background: transparent;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-gilt {
+  background: var(--gilt);
+  color: var(--velvet-deep);
+}
+
+.btn-gilt:hover:not(:disabled) {
+  background: var(--gilt-strong);
+}
+
+.btn-velvet {
+  background: var(--velvet);
+  color: var(--ivory);
+}
+
+.btn-velvet:hover:not(:disabled) {
+  background: var(--velvet-raised);
+}
+
+.btn-outline {
+  border-color: var(--outline);
+  color: var(--text);
+}
+
+.btn-outline:hover:not(:disabled) {
+  border-color: var(--text);
+}
+
+.btn-quiet {
+  padding: 0 10px;
+  color: var(--text-soft);
+}
+
+.btn-quiet:hover:not(:disabled) {
+  color: var(--text);
+}
+
+.btn-danger {
+  border-color: var(--outline);
+  color: var(--danger);
+}
+
+.btn-danger:hover:not(:disabled) {
+  border-color: var(--danger);
+}
+
+.btn-sm {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-soft);
+}
+
+.icon-btn:hover {
+  background: rgba(251, 243, 230, 0.1);
+  color: var(--text);
+}
+
+.input {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1.5px solid var(--input-border);
+  border-radius: var(--radius-control);
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+.input::placeholder {
+  color: var(--text-soft);
+  opacity: 0.8;
+}
+
+.input:focus-visible {
+  outline-offset: 0;
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.inline-form {
+  display: flex;
+  gap: 8px;
+}
+
+.inline-form .input {
+  flex: 1;
+  min-width: 0;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1.5px solid var(--outline);
+  border-radius: 999px;
+  background: transparent;
+  font-weight: 700;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.chip:hover {
+  border-color: var(--text);
+}
+
+.chip[aria-checked='true'],
+.chip[aria-pressed='true'] {
+  border-color: var(--gilt);
+  background: var(--gilt);
+  color: var(--velvet-deep);
+}
+
+.msg {
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.msg:empty {
+  display: none;
+}
+
+.msg.is-error {
+  color: var(--danger);
+}
+
+.msg.is-ok {
+  color: var(--ok);
+}
+
+.shield {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.shield .rim {
+  fill: var(--gilt);
+}
+
+.shield .field {
+  fill: var(--velvet-raised);
+}
+
+.shield .edge {
+  fill: none;
+  stroke: rgba(30, 2, 10, 0.45);
+  stroke-width: 2;
+}
+
+.shield .inner {
+  fill: none;
+  stroke: var(--gilt);
+  stroke-opacity: 0.42;
+  stroke-width: 1.6;
+}
+
+.shield .stud {
+  fill: var(--gilt-dim);
+  transition: fill 0.35s ease;
+}
+
+.shield .stud.is-lit {
+  fill: var(--gilt);
+}
+
+.shield.raising .stud {
+  transition-delay: calc(var(--i) * 22ms);
+}
+
+.clock {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shield .stud,
+  .btn {
+    transition: none;
+  }
+}
